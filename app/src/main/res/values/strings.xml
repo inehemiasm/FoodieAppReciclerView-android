@@ -1,0 +1,97 @@
+<resources>
+    <string name="app_name">FoddieApp</string>
+    <string name="item_title">TITLE</string>
+    <string name="item_info">Info</string>
+    <string name="meal_details_placeholder">It is a long established fact that a reader will
+            be distracted by the readable content of a page when
+            looking at its layout. The point of using Lorem Ipsum is
+            that it has a more-or-less normal distribution of letters,
+            as opposed to using \'Content here, content here\', making it
+            look like readable English.
+            Many desktop publishing packages and web page editors
+            now use Lorem Ipsum as their default model text, and a
+            search for \'lorem ipsum\' will uncover many web sites
+            still in their infancy. Various versions have evolved over
+            the years, sometimes by accident, sometimes on purpose
+            (injected humour and the like).</string>
+    <string name="image_picker">Image Picker</string>
+    <string name="food_title">Food Title</string>
+    <string name="food_info">Food Info</string>
+    <string name="food_description">Description</string>
+
+
+    <string-array name="food_titles">
+        <item>Apple Pie</item>
+        <item>California Panini</item>
+        <item>Cappuccino</item>
+        <item>Greek Salad</item>
+        <item>Mesculin Chicken Wrap</item>
+        <item>Salmon Burger</item>
+        <item>Pizza</item>
+        <item>Cheeseburger</item>
+    </string-array>
+    <string-array name="food_infos">
+        <item>Delicious Dessert</item>
+        <item>Awesome Sandwich</item>
+        <item>Hot Drink</item>
+        <item>Healthy Salad</item>
+        <item>Healthy and Delicious Wrap</item>
+        <item>A healthy burger?</item>
+        <item>Who doesn't like Pizza?</item>
+        <item>Delicious Cheeseburger</item>
+    </string-array>
+
+    <string-array name="food_images">
+        <item>@drawable/apple_pie</item>
+        <item>@drawable/california_panini</item>
+        <item>@drawable/capuccino</item>
+        <item>@drawable/greek_salad</item>
+        <item>@drawable/mesculin_chicken_wrap</item>
+        <item>@drawable/salmon_burger</item>
+        <item>@drawable/pizza</item>
+        <item>@drawable/cheeseburger</item>
+    </string-array>
+    <string-array name="food_description">
+        <item>The basis of Dutch apple pie is a crust on the bottom and around the edges.
+            This crust is then filled with pieces or slices of apple, usually a
+            crisp and mildly tart variety such as Goudreinet or Elstar.
+            Cinnamon and sugar are generally mixed in with the apple filling.
+        </item>
+        <item>
+            Layered with melty cheese, sliced avocado and tomato,
+            smoked chicken and a flavorful bell pepper, garlic aioli -
+            this panini is hearty and satisfying!  Ready in minutes</item>
+        <item>coffee made with milk that has been frothed up with pressurized steam.</item>
+        <item>Directions. Place the cucumber, peppers, tomatoes and red onion in a large bowl.
+            For the vinaigrette, whisk together the garlic, oregano, mustard, vinegar,
+            salt and pepper in a small bowl.
+            Still whisking, slowly add the olive oil to
+            make an emulsion. Pour the vinaigrette over the vegetables.</item>
+        <item>Toss together mesclun, basil, tomato mixture, and salt to taste. Drizzle some
+            lime vinaigrette from bowl
+            over chicken and serve with mesclun salad.</item>
+        <item>Salmon Burgers is a Healthy way of enjoying a burger and fish at the same time</item>
+        <item>Pizza is a savoury dish of Italian origin, consisting of a usually round,
+            flattened base of leavened wheat-based
+            dough topped with tomatoes, cheese, and various other ingredients</item>
+        <item>
+
+            A cheeseburger is a hamburger topped with cheese.
+            Traditionally, the slice of cheese is placed on top of
+            the meat patty, but the burger can include many variations in structure,
+            ingredients, and composition.</item>
+    </string-array>
+
+    <string-array name="urls">
+        <item>https://www.tasteofhome.com/recipes/apple-pie/</item>
+        <item>https://www.garlicandzest.com/california-smoked-chicken-panini/</item>
+        <item>https://www.folgerscoffee.com/coffee-how-to/how-to-videos/how-to-make-cappuccino</item>
+        <item>https://www.foodnetwork.com/recipes/ina-garten/greek-salad-recipe-1948517</item>
+        <item>https://www.epicurious.com/recipes/food/views/grilled-chicken-with-shredded-mesclun-salad-232486</item>
+        <item>https://www.delish.com/cooking/recipe-ideas/recipes/a57945/homemade-salmon-burgers-recipe/</item>
+        <item>https://www.allrecipes.com/recipe/48727/mikes-homemade-pizza/</item>
+        <item>https://sallysbakingaddiction.com/homemade-extra-cheese-pizza/</item>
+    </string-array>
+
+
+</resources>
