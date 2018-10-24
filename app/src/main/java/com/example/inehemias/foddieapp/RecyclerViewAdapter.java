@@ -40,7 +40,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     public void onBindViewHolder(@NonNull MyViewHolder holder, final int position) {
 
         holder.meal_title.setText(mData.get(position).getTitle());
-        holder.meal_info.setText((CharSequence) mData.get(position).getInfo());
+        holder.meal_info.setText(mData.get(position).getInfo());
         holder.meal_thumbnail.setImageResource(mData.get(position).getImage());
         holder.cardView.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
@@ -58,7 +58,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                         notifyItemRemoved(position);
 
                         notifyItemRangeChanged(position,mData.size());
-                        Toast.makeText(mContext, "Removed : "+mealItem, Toast.LENGTH_LONG).show();
+                        Toast.makeText(mContext, "Removed : "+mealItem,
+                        Toast.LENGTH_LONG).show();
                     }
                 });
                 alert.setNegativeButton("No", new DialogInterface.OnClickListener() {
@@ -68,8 +69,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                     }
                 });
                 alert.show();
-
-
                 return true;
             }
 
@@ -111,7 +110,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             meal_info = (TextView)  itemView.findViewById(R.id.mealInfo);
 
             meal_thumbnail = (ImageView) itemView.findViewById(R.id.meal_img_id);
-            cardView = (CardView) itemView.findViewById(R.id.cardview_id);
+            cardView = itemView.findViewById(R.id.cardview_id);
         }
     }
 }

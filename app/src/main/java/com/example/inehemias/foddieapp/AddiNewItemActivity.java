@@ -33,29 +33,14 @@ public class AddiNewItemActivity extends AppCompatActivity implements AdapterVie
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_adding_items);
         Intent intent = getIntent();
-
-
-
         // set the custom dialog components - texts and image
          editTitle = (EditText) findViewById(R.id.foodNameInfoInput);
          editInfo = (EditText) findViewById(R.id.foodInfoInput);
          editDesc = (EditText) findViewById(R.id.foodDescInput);
-         Spinner spiner = (Spinner) findViewById(R.id.image_selector);
+         Spinner spinner = (Spinner) findViewById(R.id.image_selector);
 
-        int[] imageList = {
-                R.drawable.apple_pie,
-                R.drawable.california_panini,
-                R.drawable.capuccino,
-                R.drawable.greek_salad,
-                R.drawable.mesculin_chicken_wrap,
-                R.drawable.salmon_burger,
-                R.drawable.pizza,
-                R.drawable.cheeseburger,
-                R.drawable.food
-
-        };
         // Spinner click listener
-        spiner.setOnItemSelectedListener(this);
+        spinner.setOnItemSelectedListener(this);
 
         // Spinner Drop down elements
         List<String> categories = new ArrayList<String>();
@@ -73,7 +58,7 @@ public class AddiNewItemActivity extends AppCompatActivity implements AdapterVie
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         // attaching data adapter to spinner
-        spiner.setAdapter(dataAdapter);
+        spinner.setAdapter(dataAdapter);
     }
 
     @Override
@@ -81,16 +66,10 @@ public class AddiNewItemActivity extends AppCompatActivity implements AdapterVie
         // On selecting a spinner item
         String item = parent.getItemAtPosition(position).toString();
         imageSrc=position;
-
-        // Showing selected spinner item
-       // Toast.makeText(parent.getContext(), "Selected: " + item, Toast.LENGTH_LONG).show();
     }
     public void onNothingSelected(AdapterView<?> arg0) {
         // TODO Auto-generated method stub
     }
-
-
-
     public void onClickok(View view) {
         Intent data = new Intent();
         title= editTitle.getText().toString();
@@ -102,15 +81,11 @@ public class AddiNewItemActivity extends AppCompatActivity implements AdapterVie
         data.putExtra("descKey", desc);
         setResult(RESULT_OK,data);
         finish();
-
-    }
+        }
 
     public void onClickCancel(View view) {
-
         finishAndRemoveTask();
-
-
-    }
+        }
 
 
     @Override

@@ -17,9 +17,9 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private RecyclerViewAdapter adapter;
     private FloatingActionButton fab;
-
     private  int gridCount;
-    int[] textureArrayWin = {
+
+    private int[] textureArray = {
             R.drawable.apple_pie,
             R.drawable.california_panini,
             R.drawable.capuccino,
@@ -28,7 +28,6 @@ public class MainActivity extends AppCompatActivity {
             R.drawable.salmon_burger,
             R.drawable.pizza,
             R.drawable.cheeseburger,
-
     };
 
     private String tag = "Main Activity";
@@ -39,22 +38,16 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         gridCount = getResources().getInteger(R.integer.grid_col_count);
         recyclerView = findViewById(R.id.recyclerview_id);
-        fab = (FloatingActionButton) findViewById(R.id.fab);
-
+        fab =  findViewById(R.id.fab);
         FoodList = new ArrayList<>();
         adapter = new RecyclerViewAdapter(this, FoodList);
         recyclerView.setAdapter(adapter);
-
         loadMealsData();//our method below to load the data from strings.xml
-
-        RecyclerView myRV =(RecyclerView) findViewById(R.id.recyclerview_id);
         RecyclerViewAdapter MyAdapter = new RecyclerViewAdapter(this, FoodList);
-        myRV.setLayoutManager(new GridLayoutManager(this, gridCount));
-        myRV.setAdapter(MyAdapter);
+        recyclerView.setLayoutManager(new GridLayoutManager(this, gridCount));
+        recyclerView.setAdapter(MyAdapter);
         AddItem();
-
-
-    }
+        }
 
     private void AddItem() {
         fab.setOnClickListener(new View.OnClickListener() {
@@ -73,38 +66,26 @@ public class MainActivity extends AppCompatActivity {
                 String info = data.getStringExtra("infoKey");
                 String desc = data.getStringExtra("descKey");
                 int image = data.getIntExtra("imageKey",0);
-                MealItemClass newItem = new MealItemClass(title, info);
-                newItem.setImage(textureArrayWin[image]);
+                MealItemClass newItem = new MealItemClass(title, info, textureArray[image]);
                 newItem.setDesc(desc);
                 FoodList.add(newItem);
                 adapter.notifyDataSetChanged();
-
-                Log.d(tag, desc);
-
-
                 }
         }
     }
     private void loadMealsData() {
         FoodList.clear();
-
+        //Loading resources to create meal items
         String [] foodTitles = getResources().getStringArray(R.array.food_titles);
         String [] foodInfos =  getResources().getStringArray(R.array.food_infos);
         String [] desc =  getResources().getStringArray(R.array.food_description);
         String [] urls = getResources().getStringArray(R.array.urls);
-
-        for(int i=0; i<textureArrayWin.length; ++i){
-
-            MealItemClass currItem = new MealItemClass(foodTitles[i], foodInfos[i], textureArrayWin[i]);
+        //Generating array of Meals
+        for(int i = 0; i< textureArray.length; ++i){
+            MealItemClass currItem = new MealItemClass(foodTitles[i], foodInfos[i], textureArray[i]);
             currItem.setDesc(desc[i]);
             currItem.setUrl(urls[i]);
             FoodList.add(currItem);
-
-        }
-        adapter.notifyDataSetChanged();
-        //come back here if issues... double check
-}
-
-
-
+            }
+        adapter.notifyDataSetChanged(); }
 }
