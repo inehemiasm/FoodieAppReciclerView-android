@@ -1,6 +1,7 @@
 package com.example.inehemias.foddieapp;
 
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -36,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         FoodList = new ArrayList<>();
         setContentView(R.layout.activity_main);
-        gridCount = getResources().getInteger(R.integer.grid_col_count);
+        gridCount = 2; // getResources().getInteger(R.integer.grid_col_count);
         recyclerView = findViewById(R.id.recyclerview_id);
         fab =  findViewById(R.id.fab);
         FoodList = new ArrayList<>();
@@ -47,6 +48,12 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new GridLayoutManager(this, gridCount));
         recyclerView.setAdapter(MyAdapter);
         AddItem();
+
+        MyReceiver myReceiver = new MyReceiver(FoodList);
+        IntentFilter intentFilter = new IntentFilter();
+        intentFilter.addAction(MyReceiver.I_AM_HOME);
+        registerReceiver(myReceiver, intentFilter);
+
         }
 
     private void AddItem() {

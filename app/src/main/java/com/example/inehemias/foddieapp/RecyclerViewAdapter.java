@@ -22,6 +22,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     private Context mContext;
     private List<MealItemClass> mData;
 
+
     public RecyclerViewAdapter (Context mContext, List<MealItemClass> mData){
         this.mContext = mContext;
         this.mData = mData;
@@ -96,6 +97,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     public int getItemCount() {
         return mData.size();
     }
+
 
     public static class MyViewHolder extends RecyclerView.ViewHolder {
 
